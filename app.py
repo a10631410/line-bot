@@ -34,6 +34,13 @@ def callback():
         abort(400)
 
     return 'OK'
+   
+
+
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    msg = event.message.text
+    r = '這個我也不知道欸嘻嘻，你可能要親自問張宇嫻ㄛ'
     if '啦啦' in msg:
         sticker_message = StickerSendMessage(
             package_id='2',
@@ -48,12 +55,6 @@ def callback():
         event.reply_token,
         sticker_message)
         return
-
-
-@handler.add(MessageEvent, message=TextMessage)
-def handle_message(event):
-    msg = event.message.text
-    r = '這個我也不知道欸嘻嘻，你可能要親自問張宇嫻ㄛ'
     if '吃'in msg:
         r = '我最愛吃了 尤其是義大利麵跟甜點!'
     elif msg == '你是誰':
