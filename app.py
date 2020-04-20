@@ -46,11 +46,7 @@ def handle_message(event):
             package_id='2',
             sticker_id='23'
         )
-    elif '晚安' in msg:
-        sticker_message = StickerSendMessage(
-            package_id='2',
-            sticker_id='26'
-        )
+    
      line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
