@@ -46,7 +46,9 @@ def handle_message(event):
             package_id='2',
             sticker_id='23'
         )
-    
+        line_bot_api.reply_message(
+        event.reply_token,
+        sticker_message)
         return
     if '吃'in msg:
         r = '我最愛吃了 尤其是義大利麵跟甜點!'
